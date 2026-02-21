@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Download — Seeded</title>
+  <meta name="description" content="Download the latest Seeded release for Linux. Seeded generates Debian metapackages from .seed files." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Seeded home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Seeded</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="download.html">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://github.com/jafetegill33/seeded" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card section">
+      <h2>Download Seeded</h2>
+      <p class="lead" style="margin-top:8px;">
+        Get the newest release from GitHub. The links below always point to the latest version.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://github.com/jafetegill33/seeded/releases/latest" target="_blank" rel="noopener">
+          Download latest (release page)
+        </a>
+
+        <a class="btn" href="https://github.com/jafetegill33/seeded/releases/latest/download/seeded_latest_amd64.deb" target="_blank" rel="noopener">
+          Direct .deb (amd64)
+        </a>
+
+        <a class="btn btn-ghost" href="https://github.com/jafetegill33/seeded/releases/latest/download/SHA256SUMS" target="_blank" rel="noopener">
+          SHA256SUMS
+        </a>
+      </div>
+
+      <h2 style="margin-top:18px;">Install (Debian/Ubuntu/ValhallaOS)</h2>
+      <div class="code">
+sudo apt install ./seeded_latest_amd64.deb
+      </div>
+
+      <h2 style="margin-top:18px;">Verify checksums</h2>
+      <p class="small">If your release assets include <code>SHA256SUMS</code>:</p>
+      <div class="code">
+sha256sum -c SHA256SUMS
+      </div>
+
+      <h2 style="margin-top:18px;">Use immediately</h2>
+      <div class="code">
+seeded render my.seed -o out --version 1.0 --maintainer "Your Name &lt;you@example.com&gt;"
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        Stable direct download strategy: always upload assets named <code>seeded_latest_amd64.deb</code> and <code>SHA256SUMS</code> on every release.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div>
+        Need help? See <a href="docs.html">Docs</a> or open an issue on
+        <a href="https://github.com/jafetegill33/seeded/issues" target="_blank" rel="noopener">GitHub</a>.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
