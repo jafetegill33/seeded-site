@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Docs — Seeded</title>
+  <meta name="description" content="Seeded documentation. Verify, render, and build Debian metapackages from .seed files." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Seeded home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Seeded</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a class="active" href="docs.html">Docs</a>
+        <a href="https://github.com/jafetegill33/seeded" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card section">
+      <h2>Seeded Docs</h2>
+      <p class="lead" style="margin-top:8px;">
+        Seeded generates Debian metapackage source trees from <code>.seed</code> files.
+        Common workflow: write seed → <strong>render</strong> → build with Debian tools.
+      </p>
+
+      <h2>Commands</h2>
+
+      <h3>seeded verify &lt;file.seed&gt;</h3>
+      <div class="code">seeded verify path/to/package.seed</div>
+
+      <h3>seeded print-deps &lt;file.seed&gt;</h3>
+      <div class="code">seeded print-deps path/to/package.seed</div>
+
+      <h3>seeded render &lt;file.seed&gt; -o &lt;outdir&gt; [options]</h3>
+      <div class="code">
+seeded render package.seed -o out \
+  --version 1.0 \
+  --maintainer "Your Name &lt;you@example.com&gt;" \
+  --distro valhalla
+      </div>
+
+      <h3>seeded build &lt;file.seed&gt; -o &lt;outdir&gt; [options]</h3>
+      <div class="code">
+seeded build package.seed -o build \
+  --version 1.0 \
+  --maintainer "Your Name &lt;you@example.com&gt;"
+      </div>
+
+      <h2>Seed file example</h2>
+      <div class="code">
+Package: my-distro-desktop
+Section: metapackages
+Priority: optional
+
+Description: My distro desktop
+ A desktop metapackage generated from a seed file.
+
+Depends:
+ xfce4
+ lightdm
+ network-manager
+      </div>
+
+      <h2>Generated output</h2>
+      <div class="code">
+&lt;package&gt;/
+ ├── debian/
+ │   ├── control
+ │   ├── rules
+ │   ├── changelog
+ │   ├── copyright
+ │   └── source/format
+ └── README.seeded
+      </div>
+
+      <h2>Downloads</h2>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://github.com/jafetegill33/seeded/releases/latest" target="_blank" rel="noopener">
+          Latest release
+        </a>
+        <a class="btn" href="https://github.com/jafetegill33/seeded/releases/latest/download/seeded_latest_amd64.deb" target="_blank" rel="noopener">
+          Direct .deb (amd64)
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        Source & issues: <a href="https://github.com/jafetegill33/seeded" target="_blank" rel="noopener">github.com/jafetegill33/seeded</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
