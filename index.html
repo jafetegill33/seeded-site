@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seeded — Debian metapackages from .seed files</title>
+  <meta name="description" content="Seeded is a fast C tool for generating Debian metapackages from .seed files. Render Debian source trees and build quickly for debootstrap/cdebootstrap based distros." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Seeded home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Seeded</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://github.com/valhallaos/seeded" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <span class="kicker"><span class="kdot"></span> C tool • Debian metapackages • ValhallaOS Ragnarök</span>
+          <h1>Generate Debian metapackages from <code>.seed</code> files.</h1>
+          <p class="lead">
+            Seeded is a fast, minimal CLI written in C that turns simple seed definitions into Debian source package trees.
+            Perfect when you’re building a distro with <strong>debootstrap</strong> / <strong>cdebootstrap</strong> and need repeatable package sets.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="https://github.com/valhallaos/seeded/releases/latest" target="_blank" rel="noopener">
+              Download latest
+            </a>
+            <a class="btn" href="docs.html">Read docs</a>
+            <a class="btn btn-ghost" href="https://github.com/valhallaos/seeded" target="_blank" rel="noopener">
+              View source
+            </a>
+          </div>
+
+          <p class="small" style="margin-top:12px;">
+            Tip: The “Download latest” button always points to the newest GitHub Release.
+          </p>
+        </div>
+
+        <aside class="card hero-side">
+          <h3 class="side-title">Quick commands</h3>
+
+          <div class="pill"><span>seeded verify</span><span>&lt;file.seed&gt;</span></div>
+          <div class="pill"><span>seeded render</span><span>-o out</span></div>
+          <div class="pill"><span>seeded build</span><span>-o build</span></div>
+
+          <div class="section" style="margin:0; padding:14px;">
+            <h2 style="margin:0 0 10px;">One-liner</h2>
+            <div class="code">
+seeded render my.seed -o out --version 1.0 --maintainer "Your Name &lt;you@example.com&gt;"
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="grid">
+        <div class="card feature">
+          <h3>Debian-correct output</h3>
+          <p>Seeded generates a clean <code>debian/</code> tree you can build with <code>dpkg-buildpackage</code> or <code>sbuild</code>.</p>
+        </div>
+        <div class="card feature">
+          <h3>Made for distro builders</h3>
+          <p>Great for “desktop profiles”, base systems, branding metapackages, and repeatable installation sets.</p>
+        </div>
+        <div class="card feature">
+          <h3>Fast + minimal</h3>
+          <p>Native C tooling designed to fit into CI/build farms and custom repositories like VAK.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Seed example</h2>
+      <div class="code">
+Package: my-distro-desktop
+Section: metapackages
+Priority: optional
+
+Description: My distro desktop
+ A desktop metapackage generated from a seed file.
+
+Depends:
+ xfce4
+ lightdm
+ network-manager
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        © Seeded • Part of the ValhallaOS Ragnarök tooling stack •
+        <a href="download.html">Downloads</a> • <a href="docs.html">Docs</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
